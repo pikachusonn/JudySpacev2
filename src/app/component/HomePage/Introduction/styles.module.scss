@@ -1,0 +1,54 @@
+.star {
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.starContainer {
+  filter: url("#goo");
+  overflow: hidden;
+}
+
+.blob {
+  width: 600px;
+  aspect-ratio: 1;
+  background-color: #ffd6ea;
+  // border-radius: 50%;
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  animation: morph 6s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 20% 80% 80% 20% / 30% 30% 70% 70%;
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 70% 30% 90% 10% / 60% 40% 80% 20%;
+    transform: rotate(90deg) scale(1.2);
+  }
+  50% {
+    border-radius: 30% 70% 20% 80% / 50% 80% 20% 70%;
+    transform: rotate(180deg) scale(1.3);
+  }
+  75% {
+    border-radius: 80% 20% 70% 30% / 20% 70% 30% 80%;
+    transform: rotate(270deg) scale(1.2);
+  }
+  100% {
+    border-radius: 20% 80% 80% 20% / 30% 30% 70% 70%;
+    transform: rotate(360deg) scale(1);
+  }
+}
+

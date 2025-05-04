@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit);
+}
+
+@theme {
+  --color-primary: #f0edfc;
+  --color-tertiary : #FFAAD4;
+  --color-textInactive: #868686
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  // color: var(--foreground);
+}
+
+.blob {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  opacity: 0.5;
+  background: #ed4264;
+  background: -webkit-linear-gradient(to right, #ffedbc, #ed4264);
+  background: linear-gradient(to right, #ffedbc, #ed4264);
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%, -50%);
+  /* animation: color-change infinite 5s alternate; */
+  /* clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%); */
+  animation: oval infinite 3s alternate;
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+.blob2 {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  opacity: 0.5;
+  background: #ed4264;
+  background: -webkit-linear-gradient(to right, #ffedbc, #ed4264);
+  background: linear-gradient(to right, #ffedbc, #ed4264);
+  width: 1000px;
+  height: 1000px;
+  transform: translate(-50%, -50%);
+  /* animation: color-change infinite 5s alternate; */
+  /* clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%); */
+  animation: oval infinite 3s alternate;
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+/* @keyframes color-change {
+  0% {
+    filter: invert(0%);
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  }
+
+  10% {
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 79% 80%, 50% 90%, 0 98%, 6% 70%, 15% 41%, 20% 10%);
+  }
+
+  40% {
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  }
+
+  50% {
+    clip-path: polygon(51% 11%, 64% 28%, 87% 39%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  }
+
+  70% {
+    clip-path: polygon(51% 11%, 64% 28%, 87% 39%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 8% 67%, 19% 48%, 30% 22%);
+  }
+
+  100% {
+    filter: invert(80%);
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  }
+} */
+
+@keyframes oval {
+  0% {
+    filter: invert(0%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+
+  34% {
+    clip-path: ellipse(50% 45% at 50% 50%);
+  }
+
+  67% {
+    clip-path: ellipse(45% 50% at 50% 50%);
+  }
+
+  100% {
+    filter: invert(80%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
