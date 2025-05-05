@@ -3,6 +3,7 @@ import { useState } from "react";
 import Filler from "./component/HomePage/Filler";
 import Introduction from "./component/HomePage/Introduction";
 import Opening from "./component/HomePage/Opening";
+import About from "./component/HomePage/About";
 
 export default function HomePage() {
   const [openingFinished, setOpeningFinished] = useState<boolean>(false);
@@ -13,6 +14,7 @@ export default function HomePage() {
         setOpeningFinished={setOpeningFinished}
       />
       <Introduction openingFinished={openingFinished} />
+      <About/>
       <Filler />
     </>
   );
