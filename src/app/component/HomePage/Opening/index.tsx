@@ -47,19 +47,26 @@ const Opening = ({
   //   stiffness: 100,
   //   damping: 20,
   // });
-  const scrollToNext = useCallback(() => {
+  const scrollToNext = useCallback((event: WheelEvent) => {
     const end = window.innerHeight * 3 + window.innerHeight * 0.08;
-    window.scrollTo({ top: end, behavior: "smooth" });
-    window.removeEventListener("wheel", scrollToNext);
+    if (event?.deltaY > 0) {
+      window.scrollTo({ top: end, behavior: "smooth" });
+      window.removeEventListener("wheel", scrollToNext);
+    }
   }, []);
-  const skipToEnd = useCallback(() => {
-    const end = window.innerHeight * 2;
-    window.scrollTo({ top: end, behavior: "smooth" });
-    window.removeEventListener("wheel", skipToEnd);
-    setTimeout(() => {
-      window.addEventListener("wheel", scrollToNext, { passive: true });
-    }, 500);
-  }, [scrollToNext]);
+  const skipToEnd = useCallback(
+    (event: WheelEvent) => {
+      const end = window.innerHeight * 2;
+      if (event?.deltaY > 0) {
+        window.scrollTo({ top: end, behavior: "smooth" });
+        window.removeEventListener("wheel", skipToEnd);
+        setTimeout(() => {
+          window.addEventListener("wheel", scrollToNext, { passive: true });
+        }, 500);
+      }
+    },
+    [scrollToNext]
+  );
   useEffect(() => {
     window.addEventListener("wheel", skipToEnd, { passive: true });
     return () => {

@@ -11,9 +11,9 @@ const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
   }, [openingFinished]);
 
   return (
-    <div className="w-full relative z-10 bg-primary overflow-hidden h-[140vh]">
+    <div className={classNames(styles.container, "w-full relative z-10 bg-primary overflow-hidden h-[150vh]")}>
       <div
-        className={`w-full h-[140vh] bg-primary top-0 font-outfit flex flex-col ${
+        className={`w-full h-[150vh] top-0 font-outfit flex flex-col ${
           !openingFinished ? "fixed" : "relative"
         }`}
       >
@@ -96,14 +96,14 @@ const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
           <div
             className={classNames(
               styles.blob,
-              "absolute bottom-[-50px] right-20 blur-md"
+              "absolute bottom-[-50px] right-20"
             )}
           ></div>
         </div>
         <div className="ml-[35px] mr-[70px] w-[calc(100%-70px)] h-[1vh] border-neutral-600 border-b"></div>
         <div
           className={classNames(
-            "w-full h-[40vh] pt-[10vh] font-outfit flex items-center font-bold text-[200px] leading-none whitespace-nowrap",
+            "w-full h-[50vh] font-outfit flex items-center font-bold text-[10em] leading-none whitespace-nowrap z-20",
             styles.infiniteTextBanner
           )}
         >
