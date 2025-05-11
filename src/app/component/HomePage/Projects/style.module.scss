@@ -1,0 +1,65 @@
+.background {
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background: url("https://i.imgur.com/PsjPzdO.png");
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    // opacity: 0
+  }
+}
+
+.baseButton {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  .blackButtonBg {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+    z-index: 0;
+  }
+
+  .btnText {
+    position: relative;
+    z-index: 10;
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    .blackButtonBg {
+      transform: translateX(0%); // slides in
+    }
+
+    .btnText {
+      color: white !important;
+    }
+  }
+}
+
+.projectItem {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #ffaad4;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
