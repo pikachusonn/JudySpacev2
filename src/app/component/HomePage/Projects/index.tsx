@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import styles from "./style.module.scss";
 import { IoIosReturnRight } from "react-icons/io";
 import Preview from "./Preview";
 import { useState } from "react";
-const ProjectItem = ({ project, mouseEnter, mouseLeave }) => {
+import ProjectDetail from "./Detail";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ProjectItem = ({ project, mouseEnter, mouseLeave }: any) => {
   return (
     <div
       key={project?.id}
@@ -25,8 +28,8 @@ const ProjectItem = ({ project, mouseEnter, mouseLeave }) => {
         {project?.name}
       </motion.span>
       <div className="flex flex-col items-end relative">
-        <motion.span>{project?.company}</motion.span>
-        <span className="text-black/40">{project?.title}</span>
+        <motion.span>{project?.title}</motion.span>
+        <span className="text-black/40">{project?.skills}</span>
       </div>
     </div>
   );
@@ -36,7 +39,7 @@ const Projects = () => {
     {
       id: 1,
       name: "TH - True Milk's Project",
-      company: "TH - True Milk",
+      skills: "#marketing#branding#strategy", // Updated to skills
       title: "Marketing executive",
       preview: [
         "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
@@ -48,7 +51,7 @@ const Projects = () => {
     {
       id: 2,
       name: "Vinamilk Campaign",
-      company: "Vinamilk",
+      skills: "#branding#advertising#strategy", // Updated to skills
       title: "Brand Strategist",
       preview: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
@@ -60,7 +63,7 @@ const Projects = () => {
     {
       id: 3,
       name: "Nestlé Vietnam Outreach",
-      company: "Nestlé Vietnam",
+      skills: "#pr#communications#publicrelations", // Updated to skills
       title: "PR Coordinator",
       preview: [
         "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
@@ -72,7 +75,7 @@ const Projects = () => {
     {
       id: 4,
       name: "Unilever Eco Campaign",
-      company: "Unilever",
+      skills: "#digitalmarketing#sustainability#branding", // Updated to skills
       title: "Digital Marketing Specialist",
       preview: [
         "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
@@ -84,7 +87,7 @@ const Projects = () => {
     {
       id: 5,
       name: "Pepsi Summer Blast",
-      company: "PepsiCo",
+      skills: "#eventmarketing#promotion#campaigns", // Updated to skills
       title: "Event Marketing Manager",
       preview: [
         "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
@@ -96,7 +99,7 @@ const Projects = () => {
     {
       id: 6,
       name: "Heineken Green Future",
-      company: "Heineken",
+      skills: "#environment#marketing#sustainability", // Updated to skills
       title: "Campaign Lead",
       preview: [
         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
@@ -108,6 +111,7 @@ const Projects = () => {
   ];
 
   const [previewProject, setPreviewProject] = useState(null);
+  const [detail, setDetail] = useState<any>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const setPreview = (set: boolean, project?: any) => {
     if (set) {
@@ -118,10 +122,10 @@ const Projects = () => {
   };
   return (
     <>
-      <div className="w-full relative z-20">
+      <div className="w-full relative z-10">
         <div
           className={classNames(
-            "w-full h-screen bg-primary font-outfit px-[4vw]",
+            "w-full flex flex-col justify-between h-screen bg-primary font-outfit px-[4vw] py-[1vw]",
             styles.background
           )}
         >
@@ -131,17 +135,18 @@ const Projects = () => {
           </div>
           <div className="w-full pt-[10px]">
             {projects?.map((p) => (
-              <ProjectItem
-                project={p}
-                key={p?.id}
-                mouseEnter={() => setPreview(true, p)}
-                mouseLeave={() => setPreview(false)}
-              />
+              <div key={p?.id} onClick={() => setDetail(p?.id)}>
+                <ProjectItem
+                  project={p}
+                  mouseEnter={() => setPreview(true, p)}
+                  mouseLeave={() => setPreview(false)}
+                />
+              </div>
             ))}
           </div>
           <button
             className={classNames(
-              "cursor-pointer relative border border-black rounded-full mt-5 overflow-hidden",
+              "cursor-pointer relative border border-black rounded-full mt-5 overflow-hidden w-fit",
               styles.baseButton
             )}
           >
@@ -164,6 +169,13 @@ const Projects = () => {
         </div>
       </div>
       {!!previewProject && <Preview project={previewProject} />}
+      {!!detail && (
+        <ProjectDetail
+          onClose={() => {
+            setDetail(null);
+          }}
+        />
+      )}
     </>
   );
 };

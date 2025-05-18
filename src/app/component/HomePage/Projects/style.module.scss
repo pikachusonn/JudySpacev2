@@ -3,7 +3,6 @@
     content: "";
     width: 100%;
     height: 100vh;
-    background: url("https://i.imgur.com/PsjPzdO.png");
     mix-blend-mode: overlay;
     position: absolute;
     top: 0;
@@ -62,4 +61,14 @@
   &:hover::before {
     transform: scaleX(1);
   }
+}
+
+@media screen and (min-width: 1700px) {
+  .projectItem {
+    padding: 15px 0 !important;
+  }
+}
+
+.projectDetail {
+  z-index: 102 !important;
 }

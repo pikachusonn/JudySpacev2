@@ -1,16 +1,11 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import { motion, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
+import Judy from "../../../../../public/Judy.jpeg";
 /* eslint-disable @next/next/no-img-element */
 const About = () => {
-  const skillSet = [
-    "Marketing",
-    "Marketing",
-    "Marketing",
-    "Marketing",
-    "Marketing",
-  ];
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -19,13 +14,21 @@ const About = () => {
   const [display, setDisplay] = useState<"education" | "workExperience">(
     "education"
   );
+
+  const [reveal, setReveal] = useState<boolean>(false);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0.5) {
+    if (latest > 0.1 && !reveal) {
+      setReveal(true);
+    }
+
+    if (latest > 0.6) {
       setDisplay("workExperience");
     } else {
       setDisplay("education");
     }
   });
+
+  const opacity = useTransform(scrollYProgress, [0.4, 0.6], [1, 0]);
 
   const workExperience = [
     {
@@ -50,13 +53,18 @@ const About = () => {
     },
   ];
   return (
-    <div className="w-full relative z-20" ref={ref}>
+    <div
+      className="w-full relative z-20"
+      ref={ref}
+      style={{ overflow: "visible" }}
+    >
       <div className="h-screen w-full bg-primary sticky inset-0 z-10 flex items-center justify-center font-outfit">
         <div
           className={classNames(
             "absolute inset-0 bg-primary",
             styles.blobsContainer
           )}
+          style={{ overflow: "visible" }}
         >
           <div className={styles.blobs}>
             <div className={classNames(styles.blob, styles.a)}></div>
@@ -66,88 +74,203 @@ const About = () => {
         </div>
         <div className="w-full h-full flex z-10">
           {display === "education" ? (
-            <div className="w-[70%]">
-              <p className="font-outfit text-[3.25em] leading-none font-semibold pt-10 pl-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas massa turpis, convallis at dignissim sed.
-              </p>
-              <div className="w-[60%] flex flex-wrap px-10 gap-2 justify-center mt-5">
-                {skillSet.map((s: string, index: number) => (
-                  <span
-                    key={index}
-                    className="border border-neutral-600 rounded-full px-10 py-1 text-[20px] font-medium"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-              <div className="p-10">
+            <motion.div className="w-[70%] pt-10" style={{ opacity }}>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={reveal ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
+                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                viewport={{ once: true }}
+              >
+                Lorem ipsum dolor sit amet, consectetur
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={reveal ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                viewport={{ once: true }}
+              >
+                adipiscing elit. Maecenas massa turpis,
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={reveal ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                viewport={{ once: true }}
+              >
+                convallis at dignissim sed.
+              </motion.p>
+              <div className="py-[10vh] pl-[7vw]">
                 <span className="font-bold text-[24px] flex items-center gap-3">
-                  <div className="bg-tertiary w-[20px] aspect-square rounded-full"></div>
-                  Education
-                </span>
-                <div className="flex w-full overflow-y-hidden gap-5">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between">
-                      <div className="flex flex-col">
-                        <p className="font-semibold">
-                          DIPLOMATIC ACADEMY OF VIETNAM
-                        </p>
-                        <p>GPA: 3.82/4</p>
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <p>Ha noi</p>
-                        <p>Expected July 2025</p>
-                      </div>
-                    </div>
-                    <p>
-                      <span className="font-semibold">
-                        Relevant Coursework:
-                      </span>{" "}
-                      International Communication; English for Special Purpose;
-                      Multimedia; Public Relations; Branding; Globalization;
-                      Event Organizing
-                    </p>
-                    <p>Semi finalist, Euréka 2024 Scientific Research Award</p>
-                    <p>
-                      Journal article (under peer review) – &quot;Framing the
-                      Perception of China&apos;s Foreign Propaganda on the QUAD
-                      (2020–2022)&quot;,
-                      <em>Revista CIDOB d&apos;Afers Internacionals</em>,
-                      Special Issue 141: Asia in Transition: Beyond Geopolitical
-                      Competition.
-                    </p>
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={reveal ? { scale: 1 } : {}}
+                    transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                    className="bg-tertiary w-[20px] aspect-square rounded-full"
+                  ></motion.div>
+                  <div className="overflow-hidden inline-block">
+                    <motion.span
+                      initial={{ x: "-100%" }}
+                      animate={reveal ? { x: "0%" } : {}}
+                      transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                      className="inline-block"
+                    >
+                      Education
+                    </motion.span>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between w-[50%]">
-                      <div className="flex flex-col">
-                        <p className="font-semibold">SON TAY HIGH SCHOOL</p>
-                        <p>GPA: 9.2/10</p>
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <p>Ha noi</p>
-                        <p>May 2021</p>
-                      </div>
+                </span>
+                <div className="flex flex-col pt-5">
+                  <div className="flex items-start">
+                    <div className="w-[120px] font-bold pt-5 overflow-hidden">
+                      <motion.span
+                        className="inline-block"
+                        initial={{ x: "-100%" }}
+                        animate={reveal ? { x: "0%" } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        Expected July 2025
+                      </motion.span>
                     </div>
-                    <p className="w-[50%]">
-                      Third Prize, City-level English Excellence Competition
-                      (Organized by Hanoi Department of Education and Training),
-                      2020 Head of Content: WEST - Son Tay English Club, 2019 -
-                      2020
-                    </p>
+
+                    <div className="flex flex-col gap-3 w-[70%] pl-5 pt-5 border-l border-black/30">
+                      <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={reveal ? { opacity: 1, y: 0 } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                        className="flex justify-between"
+                      >
+                        <div className="flex flex-col">
+                          <p className="font-semibold">
+                            DIPLOMATIC ACADEMY OF VIETNAM
+                          </p>
+                          <p>GPA: 3.82/4</p>
+                        </div>
+                        <div className="flex flex-col items-end font-bold">
+                          <p>Ha noi</p>
+                        </div>
+                      </motion.div>
+                      <motion.p
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={reveal ? { opacity: 1, y: 0 } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        <span className="font-semibold">
+                          Relevant Coursework:
+                        </span>{" "}
+                        International Communication; English for Special
+                        Purpose; Multimedia; Public Relations; Branding;
+                        Globalization; Event Organizing
+                      </motion.p>
+                      <motion.p
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={reveal ? { opacity: 1, y: 0 } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        Semi finalist, Euréka 2024 Scientific Research Award
+                      </motion.p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-[120px] font-bold pt-5 overflow-hidden">
+                      <motion.span
+                        className="inline-block"
+                        initial={{ x: "-100%" }}
+                        animate={reveal ? { x: "0%" } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        May 2021
+                      </motion.span>
+                    </div>
+                    <div className="flex flex-col gap-3 w-[70%] pl-5 border-l border-black/30 pt-10 pb-5">
+                      <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={reveal ? { opacity: 1, y: 0 } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                        className="flex justify-between"
+                      >
+                        <div className="flex flex-col">
+                          <p className="font-semibold">SON TAY HIGH SCHOOL</p>
+                          <p>GPA: 9.2/10</p>
+                        </div>
+                        <div className="flex flex-col items-end font-bold">
+                          <p>Ha noi</p>
+                        </div>
+                      </motion.div>
+                      <motion.p
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={reveal ? { opacity: 1, y: 0 } : {}}
+                        transition={{
+                          duration: 1,
+                          ease: "easeOut",
+                          delay: 0.2,
+                        }}
+                      >
+                        Third Prize, City-level English Excellence Competition
+                        (Organized by Hanoi Department of Education and
+                        Training), 2020 Head of Content: WEST - Son Tay English
+                        Club, 2019 - 2020
+                      </motion.p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ) : (
             <div className="px-[10vw] pt-[20vh] w-[70%]">
               <span className="font-bold text-[64px] flex items-center gap-3">
-                <div className="bg-tertiary w-[25px] aspect-square rounded-full"></div>
-                Work Experience
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1 }}
+                  className="bg-tertiary w-[25px] aspect-square rounded-full"
+                ></motion.div>
+                <div className="overflow-hidden inline-block">
+                  <motion.span
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "0%" }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="inline-block"
+                  >
+                    Work Experience
+                  </motion.span>
+                </div>
               </span>
               <div className="flex flex-col w-full overflow-y-hidden gap-5 pt-5 pl-8">
                 {workExperience.map((we, index) => (
-                  <div
+                  <motion.div
+                    initial={{ y: "-100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    transition={{
+                      duration: 1,
+                      ease: "easeOut",
+                      delay: 0.2 * index,
+                    }}
                     key={index}
                     className="flex items-start gap-5 text-[30px]"
                   >
@@ -160,14 +283,14 @@ const About = () => {
                         {we?.title}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           )}
           <div className="grow flex items-center flex-col justify-center gap-5">
             <img
-              src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/484011056_2574268962920142_6488150589886580333_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHXWqV_p-zeJAwVvkFROYv1xkT13s5mIx3GRPXezmYjHTVM1l0SGM8hLYCI0ytiJgcenp_NGoR5xr83YFcrj95g&_nc_ohc=vkcFTWPaMKIQ7kNvwGsL03k&_nc_oc=AdmxEpJE4fRZcw5QWS8QY5pQrVgHAcQs6kyEnZxaaIgt_BwmaLv-NM4sHMmuDKisbLQ&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=hX0MHKSqqtHG94asZpqi4Q&oh=00_AfG1-g5u6Mo1CPpWVv3iMzBLajDQ7wBwoqN7fAG9kd96lQ&oe=681E308F"
+              src={Judy.src}
               alt="judy"
               className="w-[261px] h-[343px] object-center object-cover rounded-md shadow-lg"
             />

@@ -9,7 +9,7 @@ import {
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import { useCallback, useEffect, useRef } from "react";
-
+import Judy from "../../../../../public/Judy.jpeg";
 const Opening = ({
   setOpeningFinished,
   openingFinished,
@@ -74,7 +74,6 @@ const Opening = ({
     };
   }, [skipToEnd]);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("scrollYProgress:", latest);
     if (latest === 1) {
       setOpeningFinished(true);
     } else {
@@ -105,9 +104,9 @@ const Opening = ({
         </motion.div>
 
         <motion.img
-          className="w-[330px] h-[433px] object-cover rounded-md border-2 border-[#F27C67]/40 shadow-xl"
-          style={{ clipPath: clipPath }}
-          src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/484011056_2574268962920142_6488150589886580333_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHXWqV_p-zeJAwVvkFROYv1xkT13s5mIx3GRPXezmYjHTVM1l0SGM8hLYCI0ytiJgcenp_NGoR5xr83YFcrj95g&_nc_ohc=vkcFTWPaMKIQ7kNvwGsL03k&_nc_oc=AdmxEpJE4fRZcw5QWS8QY5pQrVgHAcQs6kyEnZxaaIgt_BwmaLv-NM4sHMmuDKisbLQ&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=hX0MHKSqqtHG94asZpqi4Q&oh=00_AfG1-g5u6Mo1CPpWVv3iMzBLajDQ7wBwoqN7fAG9kd96lQ&oe=681E308F"
+          className="w-[330px] h-[433px] object-cover rounded-md border-2 border-[#F27C67]/40 shadow-xl relative"
+          style={{ clipPath: clipPath, mixBlendMode: "normal", zIndex: 2000 }}
+          src={Judy.src}
         />
 
         <motion.div

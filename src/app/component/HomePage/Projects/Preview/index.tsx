@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
-
-const Preview = ({ project }) => {
+const Preview = ({ project }: any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const previews = project?.preview || [];
 
@@ -16,7 +15,7 @@ const Preview = ({ project }) => {
   }, [previews]);
 
   return (
-    <div className="fixed top-1/2 left-3/5 -translate-x-1/2 -translate-y-1/2 z-50">
+    <div className="fixed top-1/2 left-3/5 -translate-x-1/2 -translate-y-1/2 z-[101] pointer-events-none">
       {previews.length > 0 && (
         <img
           alt="preview"

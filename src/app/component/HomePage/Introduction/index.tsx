@@ -4,11 +4,8 @@
 
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-import { useEffect } from "react";
 const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
-  useEffect(() => {
-    console.log(openingFinished);
-  }, [openingFinished]);
+
 
   return (
     <div className={classNames(styles.container, "w-full relative z-10 bg-primary overflow-hidden h-[150vh]")}>
