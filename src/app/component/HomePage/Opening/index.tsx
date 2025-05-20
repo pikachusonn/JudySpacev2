@@ -98,9 +98,7 @@ const Opening = ({
             <span>Vũ Thị </span>
             <span>Thảo Dương</span>
           </div>
-          <span className="font-[550] text-sm">
-            Marketing Executive & Business Analyst
-          </span>
+          <span className="font-[550] text-sm">Communication & Marketing</span>
         </motion.div>
 
         <motion.img
@@ -113,9 +111,7 @@ const Opening = ({
           style={{ opacity: revealText, top: revealTextMove }}
           className="text-black flex flex-col items-center justify-center gap-2 relative"
         >
-          <span className="font-[550] text-sm">
-            The horrors persist but so will I
-          </span>
+          <span className="font-[550] text-sm">Rather be dead than cool</span>
           <motion.div
             animate={{ scale: [1, 1.4, 1], y: [-3, 3, -3] }}
             transition={{ duration: 2.5, repeat: Infinity }}

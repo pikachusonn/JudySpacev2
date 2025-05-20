@@ -38,74 +38,47 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      name: "TH - True Milk's Project",
-      skills: "#marketing#branding#strategy", // Updated to skills
-      title: "Marketing executive",
+      name: "The Marketer ",
+      skills: "#marketing #branding #contentcreator", // Updated to skills
+      title: "Founder - Content Creator",
       preview: [
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-19+lu%CC%81c+13.34.28.png",
       ],
     },
     {
       id: 2,
-      name: "Vinamilk Campaign",
-      skills: "#branding#advertising#strategy", // Updated to skills
-      title: "Brand Strategist",
+      name: "TH Group's 1,000 School Toilets Initiative",
+      skills: "#branding #journalism", // Updated to skills
+      title: "Public Relation",
       preview: [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/channels4_profile.jpg",
       ],
     },
     {
       id: 3,
-      name: "Nestlé Vietnam Outreach",
-      skills: "#pr#communications#publicrelations", // Updated to skills
-      title: "PR Coordinator",
+      name: "Car Center",
+      skills: "#projectmangement #contentcreator", // Updated to skills
+      title: "Account Manager - Social Content Creator",
       preview: [
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/jdsp/468964516_1382350256439269_3437765367792369130_n.jpg",
       ],
     },
     {
       id: 4,
-      name: "Unilever Eco Campaign",
-      skills: "#digitalmarketing#sustainability#branding", // Updated to skills
-      title: "Digital Marketing Specialist",
+      name: "MobiFone's Saymee",
+      skills: "#contentcreator ", // Updated to skills
+      title: "Social Content Creator",
       preview: [
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/jdsp/485063030_651832077779131_4067324698349965018_n.jpg",
       ],
     },
     {
       id: 5,
-      name: "Pepsi Summer Blast",
-      skills: "#eventmarketing#promotion#campaigns", // Updated to skills
-      title: "Event Marketing Manager",
+      name: "Aeon Mall Huế's opening ceremony",
+      skills: "#branding #booking #strategy", // Updated to skills
+      title: "Account - Booking KOC/KOL",
       preview: [
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
-      ],
-    },
-    {
-      id: 6,
-      name: "Heineken Green Future",
-      skills: "#environment#marketing#sustainability", // Updated to skills
-      title: "Campaign Lead",
-      preview: [
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg/1200px-Billie_Eilish_2019_by_Glenn_Francis_%28cropped%29_2.jpg",
-        "https://cdnphoto.dantri.com.vn/WyLTtMT1TlAqL4JZGsl6KaMf264=/thumb_w/960/2020/02/25/7-1582641114974.jpg",
-        "https://adminvov1.vov.gov.vn/UploadImages/vov1/2019/thang_8/16-Billie-Eilish.jpg?w=1000",
-        "https://media.vov.vn/sites/default/files/styles/large/public/2021-08/image_7.jpeg",
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/jdsp/maxresdefault+(1).jpg",
       ],
     },
   ];

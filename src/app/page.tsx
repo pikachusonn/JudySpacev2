@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Filler from "./component/HomePage/Filler";
+import Contact from "./component/HomePage/Contact";
 import Introduction from "./component/HomePage/Introduction";
 import Opening from "./component/HomePage/Opening";
 import About from "./component/HomePage/About";
@@ -16,7 +16,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className={classNames(styles.container, "relative")}>
+    <div className={classNames(styles.container)}>
       <Opening
         openingFinished={openingFinished}
         setOpeningFinished={setOpeningFinished}
@@ -24,7 +24,7 @@ export default function HomePage() {
       <Introduction openingFinished={openingFinished} />
       <About />
       <Projects />
-      <Filler />
+      <Contact />
     </div>
   );
 }

@@ -46,6 +46,16 @@
   }
 }
 
+.contentWrapper {
+  padding: 5vh 0 5vh 7vw;
+}
+
+@media screen and (min-width: 1700px) {
+  .contentWrapper {
+    padding: 10vh 0 10vh 7vw;
+  }
+}
+
 $R: 300px;
 @keyframes circular {
   0% {

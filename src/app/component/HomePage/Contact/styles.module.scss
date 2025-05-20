@@ -1,0 +1,24 @@
+.socialsLink {
+    overflow-x: hidden;
+  
+    .background {
+      transform: translateX(100%);
+      transition: transform 0.3s linear;
+    }
+  
+    span {
+      color: inherit;
+      transition: color 0.3s linear;
+    }
+  
+    &:hover {
+      .background {
+        transform: translateX(0%);
+      }
+  
+      span {
+        color: white !important;
+      }
+    }
+  }
+  

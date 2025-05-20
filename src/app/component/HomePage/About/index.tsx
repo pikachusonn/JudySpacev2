@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import { motion, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import Judy from "../../../../../public/Judy.jpeg";
 /* eslint-disable @next/next/no-img-element */
 const About = () => {
   const ref = useRef(null);
@@ -79,30 +78,34 @@ const About = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={reveal ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                className="font-outfit text-[3em] font-semibold pl-10 leading-[1]"
                 viewport={{ once: true }}
               >
-                Lorem ipsum dolor sit amet, consectetur
+                International Communication graduate-to-be
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={reveal ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                className="font-outfit text-[3em] font-semibold pl-10 leading-[1]"
                 viewport={{ once: true }}
               >
-                adipiscing elit. Maecenas massa turpis,
+                with a strong academic foundation.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={reveal ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-                className="font-outfit text-[3.25em] font-semibold pl-10 leading-[0.8]"
+                className="font-outfit text-[3em] font-semibold pl-10 leading-[1]"
                 viewport={{ once: true }}
               >
-                convallis at dignissim sed.
+                I view education as a launchpad for practical impact
               </motion.p>
-              <div className="py-[10vh] pl-[7vw]">
+              <div
+                className={classNames(
+                  styles.contentWrapper
+                )}
+              >
                 <span className="font-bold text-[24px] flex items-center gap-3">
                   <motion.div
                     initial={{ scale: 0 }}
@@ -290,13 +293,15 @@ const About = () => {
           )}
           <div className="grow flex items-center flex-col justify-center gap-5">
             <img
-              src={Judy.src}
+              src={
+                "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/quality_restoration_20250427081600207.JPG"
+              }
               alt="judy"
               className="w-[261px] h-[343px] object-center object-cover rounded-md shadow-lg"
             />
-            <p className="font-outfit w-[261px] text-[14px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              massa turpis, convallis at dignissim sed.
+            <p className="font-outfit w-[261px] text-[14px] font-medium italic">
+              &quot;The mind is not a vessel to be filled, but a fire to be
+              kindled&quot;
             </p>
           </div>
         </div>
