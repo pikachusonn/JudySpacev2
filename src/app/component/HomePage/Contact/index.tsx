@@ -14,7 +14,7 @@ const Contact = () => {
           className="w-[300px] h-auto"
         />
         <span className="font-outfit text-white">Ban da bi con meo</span> */}
-        <div className="w-full px-[4vw] py-[4vh] flex items-center justify-between">
+        <div className="w-full px-[4vw] py-[4vh] flex items-start justify-between">
           <div className="text-[32px] leading-none">
             <span className="font-medium text-[#7E7E7E]/50">
               Let’s collaborate
@@ -24,7 +24,7 @@ const Contact = () => {
               thaoduong250203@gmail.com
             </span>
           </div>
-          <div className="flex flex-col w-[30vw]">
+          <div className="flex flex-col w-[30vw] gap-8">
             <div className="flex items-center justify-between">
               <div className="flex flex-col leading-none">
                 <span className="text-[16px] font-medium">Waozuong | Judy</span>

@@ -74,7 +74,16 @@ const Projects = () => {
     },
     {
       id: 5,
-      name: "Aeon Mall Huế's opening ceremony",
+      name: "MB Capital ",
+      skills: "#projectmangement", // Updated to skills
+      title: "Account",
+      preview: [
+        "https://pikachusonn.s3.ap-southeast-2.amazonaws.com/304323516_389444766710848_4735069115480213_n.png",
+      ],
+    },
+    {
+      id: 6,
+      name: "Aeon Mall Hue's opening ceremony",
       skills: "#branding #booking #strategy", // Updated to skills
       title: "Account - Booking KOC/KOL",
       preview: [
@@ -108,7 +117,7 @@ const Projects = () => {
           </div>
           <div className="w-full pt-[10px]">
             {projects?.map((p) => (
-              <div key={p?.id} onClick={() => setDetail(p?.id)}>
+              <div key={p?.id} onClick={() => setDetail(p)}>
                 <ProjectItem
                   project={p}
                   mouseEnter={() => setPreview(true, p)}
@@ -147,6 +156,8 @@ const Projects = () => {
           onClose={() => {
             setDetail(null);
           }}
+          projectName={detail?.name}
+          projectId={detail?.id}
         />
       )}
     </>

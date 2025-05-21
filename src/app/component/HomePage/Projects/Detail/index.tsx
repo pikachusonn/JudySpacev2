@@ -6,13 +6,23 @@ import { motion } from "framer-motion";
 import classNames from "classnames";
 import { AiOutlineClose } from "react-icons/ai";
 import styles from "../style.module.scss";
+import ProjectOne from "./Content/ProjectOne";
+import ProjectSecond from "./Content/ProjectSecond";
+import ProjectThird from "./Content/ProjectThird";
 
-const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
+const ProjectDetail = ({
+  onClose,
+  projectName,
+  projectId,
+}: {
+  onClose: () => void;
+  projectName: string;
+  projectId: number;
+}) => {
   const [isScrollable, setIsScrollable] = useState(false);
   const [revealed, setRevealed] = useState(false);
   useEffect(() => {
     document.body.style.overflow = "hidden";
-
     const timer = setTimeout(() => {
       setIsScrollable(true);
       setRevealed(true);
@@ -24,6 +34,19 @@ const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
     };
   }, []);
 
+  const renderContent = () => {
+    switch (projectId) {
+      case 1:
+        return <ProjectOne />;
+      case 2:
+        return <ProjectSecond />;
+      case 3:
+        return <ProjectThird />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <motion.div
       initial={{ height: "0vh" }}
@@ -31,7 +54,7 @@ const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
       transition={{ duration: 1.5, ease: "easeInOut" }}
       className={classNames(
         styles.projectDetail,
-        "w-full bg-black fixed left-0 top-[49%] -translate-y-1/2 text-white font-outfit px-[1.5vw]",
+        "w-full bg-black fixed left-0 top-[50%] -translate-y-1/2 text-white font-outfit px-[1.5vw]",
         isScrollable ? "overflow-y-auto" : "overflow-hidden",
         !revealed && "flex items-center justify-center"
       )}
@@ -49,7 +72,7 @@ const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
             }}
             className="text-center text-[128px] font-semibold w-full"
           >
-            The Goat Project
+            {projectName}
           </motion.p>
         </div>
       )}
@@ -72,7 +95,7 @@ const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
                   transition={{ duration: 1 }}
                   className="text-[24px] font-semibold inline-block"
                 >
-                  The GOAT Project
+                  {projectName}
                 </motion.span>
               </div>
             </div>
@@ -81,71 +104,7 @@ const ProjectDetail = ({ onClose }: { onClose: () => void }) => {
             </div>
           </div>
 
-          {/* Add your content here */}
-          <motion.div
-            initial={{ filter: "blur(40px)" }}
-            animate={{ filter: "blur(0px)" }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="pt-[10px] text-white font-semibold text-[20px] flex flex-col gap-3"
-          >
-            <img
-              src="https://images.pexels.com/photos/1251720/pexels-photo-1251720.jpeg?cs=srgb&dl=pexels-andreea-ch-371539-1251720.jpg&fm=jpg"
-              className="w-full h-[50vh] object-center object-cover"
-            />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              semper quam porttitor lorem accumsan ullamcorper. Nam volutpat
-              vitae lectus sed mattis. Curabitur faucibus nisl vel fermentum
-              dignissim. Proin vitae erat ligula. Sed fringilla ullamcorper ex
-              vel ullamcorper. Maecenas ut quam at tortor mattis placerat eu
-              eget ipsum. Proin vitae erat ligula. Sed fringilla ullamcorper ex
-              vel ullamcorper. Maecenas ut quam at tortor mattis placerat eu
-              eget
-            </p>
-            <div className="flex items center">
-              <div className="w-1/3 aspect-[1.5] relative">
-                <img
-                  className="w-[50%] border-2 border-white/40 aspect-square object-center object-cover absolute top-0 left-0"
-                  src="https://c1.wallpaperflare.com/preview/69/659/683/statue-marble-classic-sculpture.jpg"
-                />
-                <img
-                  className="w-[50%] border-2 border-white/40 aspect-square object-center object-cover absolute bottom-0 right-[30px]"
-                  src="https://i.imgur.com/uwiIAfh.jpg"
-                />
-              </div>
-              <div className="w-2/3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                semper quam porttitor lorem accumsan ullamcorper. Nam volutpat
-                vitae lectus sed mattis. Curabitur faucibus nisl vel fermentum
-                dignissim. Proin vitae erat ligula. Sed fringilla ullamcorper ex
-                vel ullamcorper. Maecenas ut quam at tortor mattis placerat eu
-                eget ipsum. Sed ultrices, velit ut dapibus condimentum, mauris
-                justo porttitor est, in ultricies ante nulla eu quam. Nullam sit
-                amet maximus tortor. Donec non est enim. Duis id ex accumsan,
-                iaculis sapien quis, malesuada velit. Morbi ut augue sit amet
-                massa dictum tempus. Donec quis efficitur turpis. Phasellus
-                semper massa orci, at luctus quam lacinia nec. Morbi facilisis
-                vitae felis vel dapibus. Duis in tortor ligula. Vestibulum
-                ornare, metus at volutpat sollicitudin, mauris neque accumsan
-                metus, sit amet posuere libero tortor quis justo. Donec non est
-                enim. Duis id ex accumsan, iaculis sapien quis, malesuada velit.
-                Morbi ut augue sit amet massa dictum tempus. Donec quis
-                efficitur turpis. Phasellus semper massa orci, at luctus quam
-                lacinia nec. Morbi facilisis vitae felis vel dapibus. Duis in
-                tortor ligula. Vestibulum ornare, metus at volutpat
-                sollicitudin, mauris neque accumsan metus, sit amet posuere
-                libero tortor quis justo. Vestibulum ornare, metus at volutpat
-                sollicitudin, mauris neque accumsan metus, sit amet posuere
-                libero tortor quis justo. Donec non est enim. Duis id ex
-                accumsan, iaculis sapien quis, malesuada velit. Morbi ut augue
-                sit amet massa dictum tempus. Donec quis efficitur turpis.
-                Phasellus semper massa orci, at luctus quam lacinia nec. Morbi
-                facilisis vitae felis vel dapibus. Duis in tortor ligula.
-                Vestibulum ornare, metus at volutpat sollicitudin, mauris neque
-                accumsan metus, sit amet posuere libero tortor quis justo.
-              </div>
-            </div>
-          </motion.div>
+          {renderContent()}
         </div>
       )}
     </motion.div>

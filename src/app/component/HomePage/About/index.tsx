@@ -31,24 +31,24 @@ const About = () => {
 
   const workExperience = [
     {
-      time: "Now",
-      company: "Amela Corp",
+      time: "12/24-5/25",
+      company: "iMedia Agency",
       title: "Junior Frontend Developer",
     },
     {
-      time: "2024",
-      company: "Viettel Software Service",
+      time: "3/24-9/24",
+      company: "Tonkin Media",
       title: "Junior Frontend Developer",
     },
     {
-      time: "2024",
-      company: "Viettel Software Service",
-      title: "Junior Frontend Developer",
+      time: "10/23-1/24",
+      company: "TH Group",
+      title: "PR Intern",
     },
     {
-      time: "2023",
-      company: "Amela Corp",
-      title: "Junior Frontend Developer",
+      time: "3/23-7/2023",
+      company: "OSP Group",
+      title: "Marketing Intern",
     },
   ];
   return (
@@ -101,11 +101,7 @@ const About = () => {
               >
                 I view education as a launchpad for practical impact
               </motion.p>
-              <div
-                className={classNames(
-                  styles.contentWrapper
-                )}
-              >
+              <div className={classNames(styles.contentWrapper)}>
                 <span className="font-bold text-[24px] flex items-center gap-3">
                   <motion.div
                     initial={{ scale: 0 }}
@@ -266,27 +262,39 @@ const About = () => {
               </span>
               <div className="flex flex-col w-full overflow-y-hidden gap-5 pt-5 pl-8">
                 {workExperience.map((we, index) => (
-                  <motion.div
-                    initial={{ y: "-100%", opacity: 0 }}
-                    animate={{ y: "0%", opacity: 1 }}
-                    transition={{
-                      duration: 1,
-                      ease: "easeOut",
-                      delay: 0.2 * index,
-                    }}
-                    key={index}
-                    className="flex items-start gap-5 text-[30px]"
-                  >
-                    <span className="font-bold w-[80px] inline-block">
-                      {we?.time}
-                    </span>
-                    <div>
-                      <p className="font-bold">{we?.company}</p>
-                      <p className="text-[#6D6D6D] font-semibold text-[16px]">
-                        {we?.title}
-                      </p>
-                    </div>
-                  </motion.div>
+                  <div className="overflow-hidden inline-block" key={index}>
+                    <motion.div
+                      initial={{ y: "-100%" }}
+                      animate={{ y: "0%" }}
+                      transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                        delay: 0.1 * index,
+                      }}
+                      className="flex items-start gap-5 text-[20px]"
+                    >
+                      <span className="font-bold w-[120px] inline-block">
+                        {we?.time}
+                      </span>
+                      <div className="h-[69px]">
+                        <p className="font-bold">{we?.company}</p>
+                        <div className="overflow-hidden">
+                          <motion.p
+                            initial={{ x: "-100%" }}
+                            animate={{ x: "0%" }}
+                            transition={{
+                              duration: 1.2,
+                              ease: "easeOut",
+                              delay: 0.8 + 0.3 * index,
+                            }}
+                            className="text-[#6D6D6D] font-semibold text-[16px]"
+                          >
+                            {we?.title}
+                          </motion.p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
