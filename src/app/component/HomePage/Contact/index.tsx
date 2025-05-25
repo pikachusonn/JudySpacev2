@@ -62,7 +62,7 @@ const Contact = () => {
                   ></div>
                   <div className="z-10 flex gap-5 items-center relative">
                     <span className="text-[12px]">[01]</span>
-                    <span>INSTAGRAM</span>
+                    <span>LINKEDIN</span>
                   </div>
                 </div>
               </a>

@@ -36,7 +36,6 @@ const ProjectDetail = ({
       clearTimeout(timer);
     };
   }, []);
-
   const renderContent = () => {
     switch (projectId) {
       case 1:
@@ -81,7 +80,11 @@ const ProjectDetail = ({
             }}
             className="text-center text-[128px] font-semibold w-full"
           >
-            {projectName}
+            {projectId == 1 ? (
+              <a href="www.tiktok.com/@judythemarketer">{projectName}</a>
+            ) : (
+              <span>{projectName}</span>
+            )}
           </motion.p>
         </div>
       )}
@@ -104,7 +107,17 @@ const ProjectDetail = ({
                   transition={{ duration: 1 }}
                   className="text-[24px] font-semibold inline-block"
                 >
-                  {projectName}
+                  {projectId == 1 ? (
+                    <a
+                      href="https://www.tiktok.com/@judythemarketer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {projectName}
+                    </a>
+                  ) : (
+                    <span>{projectName}</span>
+                  )}
                 </motion.span>
               </div>
             </div>

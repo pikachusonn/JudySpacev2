@@ -33,12 +33,12 @@ const About = () => {
     {
       time: "12/24-5/25",
       company: "iMedia Agency",
-      title: "Junior Frontend Developer",
+      title: "Marketing Team Lead",
     },
     {
       time: "3/24-9/24",
       company: "Tonkin Media",
-      title: "Junior Frontend Developer",
+      title: "Account Executive",
     },
     {
       time: "10/23-1/24",
