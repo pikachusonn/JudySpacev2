@@ -5,10 +5,13 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
-
-
   return (
-    <div className={classNames(styles.container, "w-full relative z-10 bg-primary overflow-hidden h-[150vh]")}>
+    <div
+      className={classNames(
+        styles.container,
+        "w-full relative z-10 bg-primary overflow-hidden h-[150vh]"
+      )}
+    >
       <div
         className={`w-full h-[150vh] top-0 font-outfit flex flex-col ${
           !openingFinished ? "fixed" : "relative"
@@ -81,8 +84,8 @@ const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
           </div>
           <div className="w-full grow flex items-end pb-[35px] pl-[35px] pr-[70px] justify-between z-10">
             <p className="text-[33px] font-outfit w-[500px] leading-none">
-              Sundown is a multi-disciplinary studio focused on creating unique,
-              end-to-end experiences and environments.
+              Marketing & Communication Executive crafting strategic stories and
+              brands that connect across digital and offline.
             </p>
             <div className="text-[200px] font-semibold leading-[0.6] flex flex-col items-end font-outfit mb-[25px]">
               <span className="opacity-50">WORK</span>

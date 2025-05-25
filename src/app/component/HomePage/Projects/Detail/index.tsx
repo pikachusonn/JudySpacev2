@@ -9,6 +9,9 @@ import styles from "../style.module.scss";
 import ProjectOne from "./Content/ProjectOne";
 import ProjectSecond from "./Content/ProjectSecond";
 import ProjectThird from "./Content/ProjectThird";
+import ProjectFourth from "./Content/ProjectFourth";
+import ProjectFifth from "./Content/ProjectFifth";
+import ProjectSixth from "./Content/ProjectSixth";
 
 const ProjectDetail = ({
   onClose,
@@ -42,6 +45,12 @@ const ProjectDetail = ({
         return <ProjectSecond />;
       case 3:
         return <ProjectThird />;
+      case 4:
+        return <ProjectFourth />;
+      case 5:
+        return <ProjectFifth />;
+      case 6:
+        return <ProjectSixth />;
       default:
         return null;
     }
