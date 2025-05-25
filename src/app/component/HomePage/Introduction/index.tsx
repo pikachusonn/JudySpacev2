@@ -83,9 +83,13 @@ const Introduction = ({ openingFinished }: { openingFinished: boolean }) => {
             <div></div>
           </div>
           <div className="w-full grow flex items-end pb-[35px] pl-[35px] pr-[70px] justify-between z-10">
-            <p className="text-[33px] font-outfit w-[500px] leading-none">
-              Marketing & Communication Executive crafting strategic stories and
-              brands that connect across digital and offline.
+            <p className="text-[25px] font-outfit w-[500px] leading-none">
+              I&apos;m a Marketing & Communication Executive with experience across
+              agency and client roles in F&B, tech, education, and FMCG. I craft
+              strategic, end-to-end communication that builds brands and
+              connects with audiences—both online and offline. Passionate about
+              storytelling and digital engagement, I create impactful work that
+              performs and inspires.
             </p>
             <div className="text-[200px] font-semibold leading-[0.6] flex flex-col items-end font-outfit mb-[25px]">
               <span className="opacity-50">WORK</span>
