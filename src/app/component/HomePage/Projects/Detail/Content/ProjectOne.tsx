@@ -1,7 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.min.css";
+import { useEffect } from "react";
 const ProjectOne = () => {
+  useEffect(() => {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+    });
+
+    return () => {
+      lightbox.destroy(); // clean up on unmount
+    };
+  }, []);
   return (
     <motion.div
       initial={{ filter: "blur(40px)" }}
@@ -9,10 +21,16 @@ const ProjectOne = () => {
       transition={{ duration: 1.5, ease: "easeOut" }}
       className="pt-[10px] text-white text-[20px] flex flex-col gap-3"
     >
-      <img
-        src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-19+lu%CC%81c+13.34.28.png"
-        className="w-full h-[60vh] object-center object-cover"
-      />
+      <a
+        href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-19+lu%CC%81c+13.34.28.png"
+        className="glightbox"
+      >
+        <img
+          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-19+lu%CC%81c+13.34.28.png"
+          className="w-full h-[60vh] object-center object-cover"
+        />
+      </a>
+
       <div className="flex p-5 items-start">
         <video
           src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/iLoveTik.com_TikTok_Media_001_e1d3d3a90a5b8bc82d0f78e996a2ffa8.mp4"

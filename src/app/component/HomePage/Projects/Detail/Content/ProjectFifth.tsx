@@ -1,7 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
+import GLightbox from "glightbox";
+import { useEffect } from "react";
+import "glightbox/dist/css/glightbox.min.css";
 const ProjectFifth = () => {
+  useEffect(() => {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+    });
+
+    return () => {
+      lightbox.destroy(); // clean up on unmount
+    };
+  }, []);
   return (
     <motion.div
       initial={{ filter: "blur(40px)" }}
@@ -9,10 +21,15 @@ const ProjectFifth = () => {
       transition={{ duration: 1.5, ease: "easeOut" }}
       className="pt-[10px] text-white text-[20px] flex flex-col gap-3"
     >
-      <img
-        src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484551635_957742966547689_2314941210130733167_n.jpg"
-        className="w-full h-[80vh] object-top object-cover"
-      />
+      <a
+        href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/304323516_389444766710848_4735069115480213_n+(1).png"
+        className="glightbox"
+      >
+        <img
+          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/304323516_389444766710848_4735069115480213_n+(1).png"
+          className="w-full h-[50vh] object-center object-cover"
+        />
+      </a>
       <p>
         In this project, I took on the role of Account for MB Capital&apos;s
         integrated communication and design initiative. The project focused on
@@ -20,10 +37,15 @@ const ProjectFifth = () => {
         materials, and website.
       </p>
       <div className="flex items-start gap-3 pt-3">
-        <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484089371_957133566608629_1575059650533053640_n.jpg"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484089371_957133566608629_1575059650533053640_n.jpg"
+          className="glightbox"
+        >
+          <img
+            src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484089371_957133566608629_1575059650533053640_n.jpg"
+            className="w-[500px] aspect-square object-center object-cover"
+          />
+        </a>
         <div>
           My core responsibilities included: <br />
           <ul className="pl-5 my-5">
@@ -49,10 +71,18 @@ const ProjectFifth = () => {
         </div>
       </div>
       <div className="flex items-start pl-[10vw] gap-3">
-        <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484039674_957816409873678_4521265811802682602_n.jpg"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484039674_957816409873678_4521265811802682602_n.jpg"
+          className="glightbox"
+        >
+          <div className="w-[500px] aspect-square">
+            <img
+              src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p5/484039674_957816409873678_4521265811802682602_n.jpg"
+              className="w-full h-full object-cover object-center rounded"
+            />
+          </div>
+        </a>
+
         <div>
           Throughout the process, I acted as the bridge between MB Capital and
           our creative team, ensuring both strategy and execution aligned with

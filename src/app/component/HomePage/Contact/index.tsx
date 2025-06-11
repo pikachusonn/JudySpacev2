@@ -27,7 +27,7 @@ const Contact = () => {
           <div className="flex flex-col w-[30vw] gap-8">
             <div className="flex items-center justify-between">
               <div className="flex flex-col leading-none">
-                <span className="text-[16px] font-medium">Waozuong | Judy</span>
+                <span className="text-[16px] font-medium">Thao Duong | Judy</span>
                 <span className="text-[14px] text-black/50 font-light">
                   Marketing Specialist
                 </span>
@@ -46,7 +46,6 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex flex-col pt-5">
-              {/* INSTAGRAM */}
               <a href="https://www.linkedin.com/in/th%E1%BA%A3o-d%C6%B0%C6%A1ng-judy-b8378921a/">
                 <div
                   className={classNames(
@@ -60,7 +59,7 @@ const Contact = () => {
                       styles.background
                     )}
                   ></div>
-                  <div className="z-10 flex gap-5 items-center relative">
+                  <div className="z-10 flex gap-5 items-center relative pl-1">
                     <span className="text-[12px]">[01]</span>
                     <span>LINKEDIN</span>
                   </div>
@@ -69,7 +68,7 @@ const Contact = () => {
 
               {/* CV */}
               <a
-                href="/your-cv-link.pdf"
+                href="https://drive.google.com/file/d/1L8m6z5Toe-d4PjTtaM_qcFFC37xo-2eD/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -85,7 +84,7 @@ const Contact = () => {
                       styles.background
                     )}
                   ></div>
-                  <div className="z-10 flex gap-5 items-center relative">
+                  <div className="z-10 flex gap-5 items-center relative pl-1">
                     <span className="text-[12px]">[02]</span>
                     <span>CV</span>
                   </div>

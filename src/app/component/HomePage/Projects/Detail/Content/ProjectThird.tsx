@@ -1,8 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
+import GLightbox from "glightbox";
+import { useEffect } from "react";
+import "glightbox/dist/css/glightbox.min.css";
 
 const ProjectThird = () => {
+  useEffect(() => {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+    });
+
+    return () => {
+      lightbox.destroy(); // clean up on unmount
+    };
+  }, []);
   return (
     <motion.div
       initial={{ filter: "blur(40px)" }}
@@ -10,10 +22,16 @@ const ProjectThird = () => {
       transition={{ duration: 1.5, ease: "easeOut" }}
       className="pt-[10px] text-white text-[20px] flex flex-col gap-3"
     >
-      <img
-        src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/492409438_1507979240543036_1126447948304098445_n.jpg"
-        className="w-full h-[60vh] object-center object-cover"
-      />
+      <a
+        href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/492409438_1507979240543036_1126447948304098445_n.jpg"
+        className="glightbox"
+      >
+        <img
+          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/492409438_1507979240543036_1126447948304098445_n.jpg"
+          className="w-full h-[60vh] object-center object-cover"
+        />
+      </a>
+
       <p>
         As a freelance Account Manager and Social Content Creator for
         Carcenter.vn, I <span className="font-bold text-tertiary/80">led</span>{" "}
@@ -29,10 +47,15 @@ const ProjectThird = () => {
         progress of social media strategies from ideation to execution.
       </p>
       <div className="flex items-start gap-3 pt-3">
-        <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/492506971_1508525703821723_4045934329071101982_n.jpg"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/2/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-06-11+lu%CC%81c+20.40.36.png"
+          className="glightbox"
+        >
+          <img
+            src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/2/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-06-11+lu%CC%81c+20.40.36.png"
+            className="object-center object-cover"
+          />
+        </a>
         <div>
           Notably, I initiated and edited the New Year campaign, crafting
           creative angles tailored to the automotive industry, which
@@ -50,10 +73,15 @@ const ProjectThird = () => {
         </div>
       </div>
       <div className="flex items-start pl-[10vw] gap-3">
-        <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/volvo.png"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/2/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-06-11+lu%CC%81c+20.42.05.png"
+          className="glightbox"
+        >
+          <img
+            src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/2/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-06-11+lu%CC%81c+20.42.05.png"
+            className="object-center object-cover w-[600px]"
+          />
+        </a>
         <div>
           This project demonstrated my ability to{" "}
           <span className="font-bold text-tertiary/80">

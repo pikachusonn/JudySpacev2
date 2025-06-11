@@ -1,7 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
+import GLightbox from "glightbox";
+import { useEffect } from "react";
+import "glightbox/dist/css/glightbox.min.css";
 const ProjectSixth = () => {
+  useEffect(() => {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+    });
+
+    return () => {
+      lightbox.destroy(); // clean up on unmount
+    };
+  }, []);
   return (
     <motion.div
       initial={{ filter: "blur(40px)" }}
@@ -9,20 +21,32 @@ const ProjectSixth = () => {
       transition={{ duration: 1.5, ease: "easeOut" }}
       className="pt-[10px] text-white text-[20px] flex flex-col gap-3"
     >
-      <img
-        src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/Opening-Hue-6-1-scaled.jpg"
-        className="w-full h-[60vh] object-bottom object-cover"
-      />
+      <a
+        href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/Opening-Hue-6-1-scaled.jpg"
+        className="glightbox"
+      >
+        <img
+          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/Opening-Hue-6-1-scaled.jpg"
+          className="w-full h-[60vh] object-bottom object-cover"
+        />
+      </a>
       <p>
         As Account Executive in charge of KOL/KOC Booking, I played a key role
         in the communication campaign for the grand opening of AEON Mall Huế —
         one of the most anticipated commercial projects in Central Vietnam.
       </p>
       <div className="flex items-start gap-3 pt-3">
-        <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/pb-openning-1-1-1.jpg"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/pb-openning-1-1-1.jpg"
+          className="glightbox"
+        >
+          <div className="w-[250px] aspect-square">
+            <img
+              src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/pb-openning-1-1-1.jpg"
+              className="w-full h-full object-center object-cover"
+            />
+          </div>
+        </a>
         <div>
           Collaborating with my team, I contributed to: <br />
           <ul className="pl-5 my-5">
@@ -55,10 +79,17 @@ const ProjectSixth = () => {
         </div>
       </div>
       <div className="flex items-start pl-[10vw] gap-3">
-        <img
+        <a
+          href="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-22+lu%CC%81c+14.23.53.png"
+          className="glightbox"
+        >
+          <div className="w-[250px] aspect-square">
+            <img
           src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-22+lu%CC%81c+14.23.53.png"
-          className="w-[20%] aspect-square object-center object-cover"
-        />
+              className="w-full h-full object-center object-cover"
+            />
+          </div>
+        </a>
         <div>
           The campaign received high engagement and positive sentiment from the
           public, successfully boosting brand awareness, foot traffic, and

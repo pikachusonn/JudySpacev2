@@ -95,8 +95,8 @@ const Opening = ({
           style={{ top: nameMoveAnimation }}
         >
           <div className="font-bold text-3xl">
-            <span>Vũ Thị </span>
-            <span>Thảo Dương</span>
+            <span>Vu Thi </span>
+            <span>Thao Duong</span>
           </div>
           <span className="font-[550] text-sm">Communication & Marketing</span>
         </motion.div>
