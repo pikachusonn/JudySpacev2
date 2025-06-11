@@ -1,18 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { motion } from "framer-motion";
 import GLightbox from "glightbox";
 import { useEffect } from "react";
 import "glightbox/dist/css/glightbox.min.css";
 const ProjectSixth = () => {
   useEffect(() => {
-    const lightbox = GLightbox({
-      selector: ".glightbox",
-    });
+    if (typeof window !== "undefined") {
+      const lightbox = GLightbox({ selector: ".glightbox" });
 
-    return () => {
-      lightbox.destroy(); // clean up on unmount
-    };
+      return () => {
+        lightbox.destroy();
+      };
+    }
   }, []);
   return (
     <motion.div
@@ -85,7 +86,7 @@ const ProjectSixth = () => {
         >
           <div className="w-[250px] aspect-square">
             <img
-          src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-22+lu%CC%81c+14.23.53.png"
+              src="https://pikachusonn.s3.ap-southeast-2.amazonaws.com/p6/A%CC%89nh+chu%CC%A3p+Ma%CC%80n+hi%CC%80nh+2025-05-22+lu%CC%81c+14.23.53.png"
               className="w-full h-full object-center object-cover"
             />
           </div>

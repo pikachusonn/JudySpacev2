@@ -6,13 +6,13 @@ import "glightbox/dist/css/glightbox.min.css";
 import { useEffect } from "react";
 const ProjectOne = () => {
   useEffect(() => {
-    const lightbox = GLightbox({
-      selector: ".glightbox",
-    });
+    if (typeof window !== "undefined") {
+      const lightbox = GLightbox({ selector: ".glightbox" });
 
-    return () => {
-      lightbox.destroy(); // clean up on unmount
-    };
+      return () => {
+        lightbox.destroy();
+      };
+    }
   }, []);
   return (
     <motion.div
