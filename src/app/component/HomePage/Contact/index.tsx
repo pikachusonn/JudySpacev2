@@ -68,7 +68,7 @@ const Contact = () => {
 
               {/* CV */}
               <a
-                href="https://drive.google.com/file/d/1L8m6z5Toe-d4PjTtaM_qcFFC37xo-2eD/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1pV1KrxwM4E3mwVSjkIoggzrH37x5XW1b/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
